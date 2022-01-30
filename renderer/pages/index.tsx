@@ -1,8 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import useUser from '@hooks/useUser';
 
 function Home() {
+  const { data } = useUser('youthfulhps');
+
+  console.log(data);
+
   return (
     <React.Fragment>
       <Head>
