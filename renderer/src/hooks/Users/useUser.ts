@@ -1,4 +1,4 @@
-import useRequest from '../libs';
+import useRequest from '../../libs';
 
 const useUser = (userId: string) => {
   const { data, error, isValidating, mutate } = useRequest(`/users/${userId}`);
