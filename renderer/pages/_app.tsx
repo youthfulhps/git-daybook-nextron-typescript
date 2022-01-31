@@ -1,6 +1,8 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
 import GlobalStyles from '@assets/styles/globalStyles';
+import CommonLayout from '@layouts/CommonLayout';
+import SectionContextProvider from '@contexts/SectionContext';
 import Head from 'next/head';
 
 function App({ Component, pageProps }: AppProps) {
@@ -16,7 +18,11 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <SectionContextProvider>
+        <CommonLayout>
+          <Component {...pageProps} />
+        </CommonLayout>
+      </SectionContextProvider>
     </>
   );
 }
