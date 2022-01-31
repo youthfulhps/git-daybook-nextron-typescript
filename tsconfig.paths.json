@@ -8,6 +8,16 @@
       "@assets/*": ["./assets/*"],
       "@hooks": ["./hooks"],
       "@hooks/*": ["./hooks/*"],
+      "@components": ["./components"],
+      "@components/*": ["./components/*"],
+      "@layouts": ["./layouts"],
+      "@layouts/*": ["./layouts/*"],
+      "@contexts": ["./contexts"],
+      "@contexts/*": ["./contexts/*"],
+      "@constants": ["./constants"],
+      "@constants/*": ["./constants/*"],
+      "@utils": ["./utils"],
+      "@utils/*": ["./utils/*"],
     }
   }
 }
