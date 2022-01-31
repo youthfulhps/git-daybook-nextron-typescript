@@ -11,6 +11,7 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "axios": "^0.25.0",
     "electron-serve": "^1.1.0",
     "electron-store": "^8.0.1",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@types/node": "^14.14.31",
     "@types/react": "^16.9.49",
+    "@types/styled-components": "^5.1.21",
     "electron": "^16.0.7",
     "electron-builder": "^22.14.5",
     "next": "^11.1.3",
