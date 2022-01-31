@@ -1,28 +1,48 @@
-import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import useUser from '@hooks/useUser';
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import { getTemplateAreaBySection } from '@assets/styles/utils';
+import { SectionContext } from '@contexts/SectionContext';
+import UserSection from '@components/User';
+
+const StyledInnerLayout = styled.div<{ activeSection: string }>`
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(5, 150px);
+  grid-gap: 16px;
+
+  ${({ activeSection }) => getTemplateAreaBySection(activeSection)};
+
+  .user {
+    grid-area: user;
+    /* border: 2px solid white; */
+  }
+  .div2 {
+    grid-area: div2;
+    /* border: 2px solid white; */
+  }
+  .div3 {
+    grid-area: div3;
+    /* border: 2px solid white; */
+  }
+  .div4 {
+    grid-area: div4;
+    /* border: 2px solid white; */
+  }
+`;
 
 function Home() {
-  const { data } = useUser('youthfulhps');
-
-  console.log(data);
+  const sectionContext = useContext(SectionContext);
 
   return (
-    <React.Fragment>
-      <Head>
-        <title>GitLog - 개발자 친화적인 기록</title>
-      </Head>
-      <div>
-        <p>
-          ⚡ Electron + Next.js ⚡ -
-          <Link href="/next">
-            <a>Go to next page</a>
-          </Link>
-        </p>
-        <img src="/images/logo.png" />
+    <StyledInnerLayout activeSection={sectionContext.activeSection}>
+      <div className="user">
+        <UserSection />
       </div>
-    </React.Fragment>
+      <div className="div2"></div>
+      <div className="div3"></div>
+      <div className="div4"></div>
+    </StyledInnerLayout>
   );
 }
 
