@@ -23,6 +23,7 @@ function Languages({ languages }: LanguagesProps) {
         const [languageKey, value, percent, color] = info;
         return (
           <Progress
+            key={languageKey}
             percent={percent}
             strokeColor={color}
             format={() => `${languageKey} (+${value})`}
