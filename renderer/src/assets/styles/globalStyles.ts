@@ -27,6 +27,16 @@ const GlobalStyles = createGlobalStyle`
         background-color: #18181C;
         color: white;
         padding-top: 50px;
+
+        --color-100: #f1f3f8;
+        --color-200: #d6e0f0;
+        --color-300: #b1bbd4;
+        --color-400: #99a2be;
+        --color-500: #8790ab;
+        --color-600: #767c93;
+        --color-700: #393b44;
+        --color-800: #24252b;
+        --color-900: #17181c;
     }
 `;
 
