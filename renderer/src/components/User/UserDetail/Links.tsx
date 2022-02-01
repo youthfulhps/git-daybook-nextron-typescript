@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { HomeOutlined, GithubOutlined, PushpinOutlined, TeamOutlined } from '@ant-design/icons';
 import Link from '@components/Common/Link';
-import LinkUtils from '@utils/LinkUtils';
+import UserUtils from '@utils/UserUtils';
 
 type LinksProps = {
   links: {
@@ -41,10 +41,10 @@ function Links({ links }: LinksProps) {
       <Link href={blog}>
         <HomeOutlined />
       </Link>
-      <Link href={LinkUtils.getSearchedKeywordLink(location)}>
+      <Link href={UserUtils.getUserSearchedKeywordLink(location)}>
         <PushpinOutlined />
       </Link>
-      <Link href={LinkUtils.getSearchedKeywordLink(company)}>
+      <Link href={UserUtils.getUserSearchedKeywordLink(company)}>
         <TeamOutlined />
       </Link>
     </StyledLinkListWrapper>
