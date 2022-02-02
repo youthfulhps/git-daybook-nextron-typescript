@@ -18,6 +18,10 @@
       "@constants/*": ["./constants/*"],
       "@utils": ["./utils"],
       "@utils/*": ["./utils/*"],
+      "@apis": ["./apis"],
+      "@apis/*": ["./apis/*"],
+      "@libs": ["./libs"],
+      "@libs/*": ["./libs/*"],
     }
   }
 }
