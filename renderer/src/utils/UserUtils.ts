@@ -15,8 +15,10 @@ export default class LinkUtils {
   }
 
   static getUserLanguageTotal(languages: any) {
+    if (!languages) return 0;
     const values = Object.keys(languages).map((language) => languages[language]);
 
+    if (!values.length) return 0;
     return values.reduce((sum, value) => sum + value);
   }
 
