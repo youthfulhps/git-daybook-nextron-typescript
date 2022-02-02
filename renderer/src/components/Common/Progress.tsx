@@ -9,7 +9,7 @@ const StyledProgress = styled(AntdProgress)`
   }
 
   .ant-progress-text {
-    color: var(--color-500);
+    color: var(--color-400);
     font-size: 12px;
   }
 
