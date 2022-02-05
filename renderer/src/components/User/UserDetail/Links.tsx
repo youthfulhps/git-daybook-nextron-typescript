@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HomeOutlined, GithubOutlined, PushpinOutlined, TeamOutlined } from '@ant-design/icons';
+import { HomeOutlined, GithubOutlined, PushpinOutlined, ShopOutlined } from '@ant-design/icons';
 import Link from '@components/Common/Link';
 import UserUtils from '@utils/UserUtils';
 
@@ -46,7 +46,7 @@ function Links({ links }: LinksProps) {
         <PushpinOutlined />
       </Link>
       <Link href={UserUtils.getUserSearchedKeywordLink(company)}>
-        <TeamOutlined />
+        <ShopOutlined />
       </Link>
     </StyledLinkListWrapper>
   );
