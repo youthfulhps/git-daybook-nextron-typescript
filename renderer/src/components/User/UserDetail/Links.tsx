@@ -23,6 +23,7 @@ const StyledLinkListWrapper = styled.div`
     //Customize icon size
     font-size: 24px;
     margin-left: 4px;
+    color: var(--color-400);
 
     &:hover {
       opacity: 0.8;

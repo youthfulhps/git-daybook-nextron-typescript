@@ -24,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: 'Pretendard', -apple-system, sans-serif;
         font-size: 14px;
-        background-color: #18181C;
+        background-color: var(--color-200);
         color: white;
         padding-top: 50px;
 

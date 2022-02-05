@@ -19,7 +19,8 @@ const StyledUserDetail = styled.div`
   align-items: center;
   justify-content: center;
   padding: 16px;
-  box-shadow: 11px 11px 17px #161619, -11px -11px 17px #1a1a1f;
+  background: var(--color-100);
+  border-radius: 16px;
 `;
 
 const StyledUserName = styled.div`
