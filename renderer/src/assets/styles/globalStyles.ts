@@ -37,6 +37,22 @@ const GlobalStyles = createGlobalStyle`
         --color-700: #393b44;
         --color-800: #24252b;
         --color-900: #17181c;
+
+        --size-100: 2px;
+        --size-200: 4px;
+        --size-300: 8px;
+        --size-400: 16px;
+        --size-500: 32px;
+        --size-600: 64px;
+        --size-700: 128px;
+
+        --weight-400: 400;
+        --weight-700: 700;
+        --weight-900: 900;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
     }
 `;
 
