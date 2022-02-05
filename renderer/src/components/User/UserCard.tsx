@@ -16,7 +16,6 @@ const StyledUserCard = styled.div<{ avatarUrl: string }>`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 11px 11px 17px #161619, -11px -11px 17px #1a1a1f;
   border-radius: 8px;
   cursor: pointer;
   position: relative;
