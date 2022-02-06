@@ -8,7 +8,7 @@ const useRepoList = () => {
     `/users/youthfulhps/repos?sort=${selectedSort}`,
   );
 
-  const mutateSort = (sort: typeof sortBy[number]) => {
+  const mutateSort = async (sort: typeof sortBy[number]) => {
     setSelectedSort(sort);
     mutate();
   };

@@ -22,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        font-family: 'Pretendard', -apple-system, sans-serif;
+        font-family: 'DM Sans', -apple-system, sans-serif;
         font-size: 14px;
         background-color: var(--color-200);
         color: white;
@@ -48,7 +48,6 @@ const GlobalStyles = createGlobalStyle`
 
         --weight-400: 400;
         --weight-700: 700;
-        --weight-900: 900;
     }
 
     ::-webkit-scrollbar {

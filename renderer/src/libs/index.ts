@@ -2,6 +2,7 @@
 
 import useSWR, { SWRConfiguration, SWRResponse } from 'swr';
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import { ScopedMutator } from 'swr/dist/types';
 const BASE_PATH = 'https://api.github.com';
 
 export type GetRequest = AxiosRequestConfig | null;
@@ -22,11 +23,16 @@ export interface Config<Data = any, Error = any>
 
 const fetcher = (url: string) => axios.get(`${BASE_PATH}${url}`).then((res) => res);
 
-export default function useRequest<Data = any, Error = any>(url: string): Return<Data, Error> {
-  const { data: response, error, isValidating, mutate } = useSWR<
-    AxiosResponse<Data>,
-    AxiosError<Error>
-  >(url, fetcher);
+export default function useRequest<Data = any, Error = any>(
+  url: string,
+  config?: SWRConfiguration,
+): Return<Data, Error> {
+  const {
+    data: response,
+    error,
+    isValidating,
+    mutate,
+  } = useSWR<AxiosResponse<Data>, AxiosError<Error>>(url, fetcher, config);
 
   return {
     data: response && response.data,
