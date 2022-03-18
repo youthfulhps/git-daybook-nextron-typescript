@@ -25,6 +25,7 @@ const StyledUserDetail = styled.div`
 
 const StyledUserName = styled.div`
   font-size: 24px;
+  color: var(--color-700);
   font-weight: bold;
 `;
 
