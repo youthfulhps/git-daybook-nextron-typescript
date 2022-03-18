@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 type RepoItemProps = {
   repo: any;
+  onClick: () => void;
 };
 
 const StyledRepoItem = styled.div`
@@ -31,9 +32,9 @@ const StyledRepoItem = styled.div`
   }
 `;
 
-function RepoItem({ repo }: RepoItemProps) {
+function RepoItem({ repo, onClick }: RepoItemProps) {
   return (
-    <StyledRepoItem>
+    <StyledRepoItem onClick={onClick}>
       <div className="repo__title--highlight">{repo.name}</div>
       <div className="repo__description--blur">{repo.description}</div>
     </StyledRepoItem>

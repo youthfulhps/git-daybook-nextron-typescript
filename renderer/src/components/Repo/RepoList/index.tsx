@@ -4,6 +4,7 @@ import RepoItem from '@components/Repo/RepoList/RepoItem';
 
 type RepoListProps = {
   repos: any;
+  activateSection: () => void;
 };
 
 const StyledRepoList = styled.div`
@@ -13,11 +14,11 @@ const StyledRepoList = styled.div`
   overflow-y: scroll;
 `;
 
-function Index({ repos }: RepoListProps) {
+function Index({ repos, activateSection }: RepoListProps) {
   return (
     <StyledRepoList>
       {repos.map((repo) => (
-        <RepoItem repo={repo} />
+        <RepoItem repo={repo} key={repo.id} onClick={activateSection} />
       ))}
     </StyledRepoList>
   );

@@ -4,6 +4,7 @@ import useRepoList from '@hooks/Repos/useRepoList';
 import Skeleton from '@components/Common/Skeleton';
 import RepoList from './RepoList';
 import RepoHeader from './RepoHeader';
+import useActiveSection from '~/hooks/common/useActiveSection';
 
 const StyledRepoSection = styled.div`
   width: 100%;
@@ -17,13 +18,14 @@ const StyledRepoSection = styled.div`
 
 function Repo() {
   const { data: repos, error, isValidating, mutate, mutateSort } = useRepoList();
+  const { isSectionActivated, activateSection } = useActiveSection('repo');
 
   if (!repos) return <Skeleton width={616} height={316} />;
 
   return (
     <StyledRepoSection>
       <RepoHeader mutateSort={mutateSort} />
-      <RepoList repos={repos} />
+      <RepoList repos={repos} activateSection={activateSection} />
     </StyledRepoSection>
   );
 }
