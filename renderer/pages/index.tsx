@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { getTemplateAreaBySection } from '@assets/styles/utils';
 import { SectionContext } from '@contexts/SectionContext';
 import UserSection from '@components/User';
+import Repo from '@components/Repo';
 
 const StyledInnerLayout = styled.div<{ activeSection: string }>`
   display: grid;
@@ -13,21 +14,22 @@ const StyledInnerLayout = styled.div<{ activeSection: string }>`
 
   ${({ activeSection }) => getTemplateAreaBySection(activeSection)};
 
+  section {
+    box-shadow: 20px 20px 60px #b6becc, -20px -20px 60px #f6ffff;
+    border-radius: 16px;
+  }
+
   .user {
     grid-area: user;
-    /* border: 2px solid white; */
   }
-  .div2 {
-    grid-area: div2;
-    /* border: 2px solid white; */
+  .repo {
+    grid-area: repo;
   }
   .div3 {
     grid-area: div3;
-    /* border: 2px solid white; */
   }
   .div4 {
     grid-area: div4;
-    /* border: 2px solid white; */
   }
 `;
 
@@ -36,10 +38,12 @@ function Home() {
 
   return (
     <StyledInnerLayout activeSection={sectionContext.activeSection}>
-      <div className="user">
+      <section className="user">
         <UserSection />
-      </div>
-      <div className="div2"></div>
+      </section>
+      <section className="repo">
+        <Repo />
+      </section>
       <div className="div3"></div>
       <div className="div4"></div>
     </StyledInnerLayout>

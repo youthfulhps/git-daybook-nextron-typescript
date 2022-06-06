@@ -23,10 +23,10 @@ const StyledLinkListWrapper = styled.div`
     //Customize icon size
     font-size: 24px;
     margin-left: 4px;
-    color: var(--color-400);
+    color: var(--color-700);
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.6;
     }
   }
 `;

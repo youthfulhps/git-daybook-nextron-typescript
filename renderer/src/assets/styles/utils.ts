@@ -5,17 +5,26 @@ export const getTemplateAreaBySection = (activeSection: string) => {
     case 'user':
       return css`
         grid-template-areas:
-          'user div2 div2'
-          'user div2 div2'
-          'user div2 div2'
+          'user repo repo'
+          'user repo repo'
+          'user . .'
           'user div4 div4'
+          'div3 div4 div4';
+      `;
+    case 'repo':
+      return css`
+        grid-template-areas:
+          'user repo repo'
+          'user repo repo'
+          'div3 repo repo'
+          'div3 repo repo'
           'div3 div4 div4';
       `;
     default:
       return css`
         grid-template-areas:
-          'user div2 div2'
-          'user div2 div2'
+          'user repo repo'
+          'user repo repo'
           'div3 div4 div4'
           'div3 div4 div4'
           'div3 div4 div4';

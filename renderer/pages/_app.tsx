@@ -4,6 +4,7 @@ import GlobalStyles from '@assets/styles/globalStyles';
 import CommonLayout from '@layouts/CommonLayout';
 import SectionContextProvider from '@contexts/SectionContext';
 import Head from 'next/head';
+import 'antd/dist/antd.css';
 
 function App({ Component, pageProps }: AppProps) {
   return (

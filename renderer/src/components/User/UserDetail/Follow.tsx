@@ -15,6 +15,7 @@ const StyledFollow = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: var(--color-700);
 `;
 
 function Follow({ followCounts }: FollowProps) {
