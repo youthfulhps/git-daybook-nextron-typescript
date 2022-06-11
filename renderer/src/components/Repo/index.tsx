@@ -17,8 +17,8 @@ const StyledRepoSection = styled.div`
 `;
 
 function Repo() {
-  const { data: repos, error, isValidating, mutate, mutateSort } = useRepoList();
-  const { isSectionActivated, activateSection } = useActiveSection('repo');
+  const { data: repos, mutateSort } = useRepoList();
+  const { activateSection } = useActiveSection('repo');
 
   if (!repos) return <Skeleton width={616} height={316} />;
 
