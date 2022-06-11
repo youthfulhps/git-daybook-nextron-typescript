@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { HomeOutlined, GithubOutlined, PushpinOutlined, ShopOutlined } from '@ant-design/icons';
-import Link from '@components/Common/Link';
+import Link from '@components/common/Link';
 import UserUtils from '@utils/UserUtils';
 
 type LinksProps = {

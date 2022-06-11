@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { TeamOutlined } from '@ant-design/icons';
-import Spacer from '@components/Common/Spacer';
+import Spacer from '@components/common/Spacer';
 
 type FollowProps = {
   followCounts: {

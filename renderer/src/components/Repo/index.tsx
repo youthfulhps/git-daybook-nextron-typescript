@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import useRepoList from '@hooks/Repos/useRepoList';
-import Skeleton from '@components/Common/Skeleton';
+import useRepoList from '@hooks/repo/useRepoList';
+import Skeleton from '@components/common/Skeleton';
 import RepoList from './RepoList';
 import RepoHeader from './RepoHeader';
-import useActiveSection from '~/hooks/common/useActiveSection';
+import useActiveSection from '@hooks/common/useActiveSection';
 
 const StyledRepoSection = styled.div`
   width: 100%;

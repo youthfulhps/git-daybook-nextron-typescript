@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import RepoItem from '@components/Repo/RepoList/RepoItem';
+import RepoItem from '@components/repo/RepoList/RepoItem';
 
 type RepoListProps = {
   repos: any;

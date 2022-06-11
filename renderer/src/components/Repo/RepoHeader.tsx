@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Menu } from 'antd';
-import useRepoList from '@hooks/Repos/useRepoList';
-import Dropdown from '@components/Common/Dropdown';
+import useRepoList from '@hooks/repo/useRepoList';
+import Dropdown from '@components/common/Dropdown';
 
 const StyledRepoHeader = styled.div`
   padding: 16px 0;

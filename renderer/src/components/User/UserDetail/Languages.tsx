@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import LanguageUtils from '@utils/LanguageUtils';
-import Skeleton from '@components/Common/Skeleton';
-import Progress from '@components/Common/Progress';
+import Skeleton from '@components/common/Skeleton';
+import Progress from '@components/common/Progress';
 
 type LanguagesProps = {
   languages: any;

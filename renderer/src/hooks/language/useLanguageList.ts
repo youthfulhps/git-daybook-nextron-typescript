@@ -1,6 +1,6 @@
 import useRequest from '../../libs';
 import { useEffect, useState, useMemo } from 'react';
-import { getUserLanguages } from '@apis/Users';
+import { getUserLanguages } from '@apis/user';
 
 const useLanguageList = (userId: string) => {
   const { data, error, isValidating, mutate } = useRequest(`/users/${userId}/repos?sort=updated`);
