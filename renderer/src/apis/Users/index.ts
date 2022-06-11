@@ -1,4 +1,13 @@
+import { API } from '..';
 import axios from 'axios';
+
+const getUser = async (userId: string) => {
+  return API.get(`/users/${userId}`);
+};
+
+const getUserLanguageList = async (userId: string, sortBy: string) => {
+  return API.get(`/users/${userId}/repos?sort=${sortBy}`);
+};
 
 export const getUserLanguages = async (repos: any) => {
   try {
@@ -24,3 +33,5 @@ export const getUserLanguages = async (repos: any) => {
     return {};
   }
 };
+
+export { getUser, getUserLanguageList };
