@@ -5,8 +5,12 @@ import CommonLayout from '@layouts/CommonLayout';
 import SectionContextProvider from '@contexts/SectionContext';
 import Head from 'next/head';
 import 'antd/dist/antd.css';
+import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 function App({ Component, pageProps }: AppProps) {
+  const queryClient = new QueryClient();
+
   return (
     <>
       <Head>
@@ -19,11 +23,16 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GlobalStyles />
-      <SectionContextProvider>
-        <CommonLayout>
-          <Component {...pageProps} />
-        </CommonLayout>
-      </SectionContextProvider>
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <SectionContextProvider>
+            <CommonLayout>
+              <Component {...pageProps} />
+            </CommonLayout>
+          </SectionContextProvider>
+        </Hydrate>
+        <ReactQueryDevtools />
+      </QueryClientProvider>
     </>
   );
 }
