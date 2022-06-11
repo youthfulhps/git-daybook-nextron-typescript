@@ -5,10 +5,6 @@ const getUser = async (userId: string) => {
   return API.get(`/users/${userId}`);
 };
 
-const getUserLanguageList = async (userId: string, sortBy: string) => {
-  return API.get(`/users/${userId}/repos?sort=${sortBy}`);
-};
-
 export const getUserLanguages = async (repos: any) => {
   try {
     const allLaguages = {};
@@ -34,4 +30,4 @@ export const getUserLanguages = async (repos: any) => {
   }
 };
 
-export { getUser, getUserLanguageList };
+export { getUser };
