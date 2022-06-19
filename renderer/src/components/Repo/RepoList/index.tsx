@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import RepoItem from '@components/Repo/RepoList/RepoItem';
+import RepoItem from '@components/repo/RepoList/RepoItem';
 
 type RepoListProps = {
   repos: any;
@@ -14,7 +14,7 @@ const StyledRepoList = styled.div`
   overflow-y: scroll;
 `;
 
-function Index({ repos, activateSection }: RepoListProps) {
+function RepoList({ repos, activateSection }: RepoListProps) {
   return (
     <StyledRepoList>
       {repos.map((repo) => (
@@ -24,4 +24,4 @@ function Index({ repos, activateSection }: RepoListProps) {
   );
 }
 
-export default Index;
+export default RepoList;

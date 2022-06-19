@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Spacer from '@components/Common/Spacer';
+import Spacer from '@components/common/Spacer';
 import Avatar from './Avatar';
 import Links from './Links';
 import Follow from './Follow';

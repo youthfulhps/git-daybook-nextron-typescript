@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { getTemplateAreaBySection } from '@assets/styles/utils';
 import { SectionContext } from '@contexts/SectionContext';
-import UserSection from '@components/User';
-import Repo from '@components/Repo';
+import UserSection from '@components/user';
+import Repo from '@components/repo';
 
 const StyledInnerLayout = styled.div<{ activeSection: string }>`
   display: grid;

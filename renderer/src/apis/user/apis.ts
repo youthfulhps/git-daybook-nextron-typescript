@@ -1,4 +1,9 @@
+import { API } from '..';
 import axios from 'axios';
+
+const getUser = async (userId: string) => {
+  return API.get(`/users/${userId}`);
+};
 
 export const getUserLanguages = async (repos: any) => {
   try {
@@ -24,3 +29,5 @@ export const getUserLanguages = async (repos: any) => {
     return {};
   }
 };
+
+export { getUser };

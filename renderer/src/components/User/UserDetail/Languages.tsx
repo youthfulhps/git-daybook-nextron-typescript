@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import UserUtils from '@utils/UserUtils';
-import Skeleton from '@components/Common/Skeleton';
-import Progress from '@components/Common/Progress';
+import LanguageUtils from '@utils/LanguageUtils';
+import Skeleton from '@components/common/Skeleton';
+import Progress from '@components/common/Progress';
 
 type LanguagesProps = {
   languages: any;
@@ -15,7 +15,7 @@ const StyledLanguages = styled.div`
 function Languages({ languages }: LanguagesProps) {
   if (!languages) return <Skeleton height={120} width={300} />;
 
-  const languageInfos = UserUtils.getUserLanguageInfos(languages);
+  const languageInfos = LanguageUtils.getLanguageInfoList(languages);
 
   return (
     <StyledLanguages>
