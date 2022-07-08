@@ -22,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        font-family: 'DM Sans', -apple-system, sans-serif;
+        font-family: 'IBM Plex Sans KR', -apple-system, sans-serif;
         font-size: 14px;
         background-color: var(--color-200);
         color: white;
