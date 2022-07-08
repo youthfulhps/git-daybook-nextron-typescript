@@ -13,8 +13,6 @@ const StyledLanguages = styled.div`
 `;
 
 function Languages({ languages }: LanguagesProps) {
-  if (!languages) return <Skeleton height={120} width={300} />;
-
   const languageInfos = LanguageUtils.getLanguageInfoList(languages);
 
   return (

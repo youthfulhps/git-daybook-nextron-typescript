@@ -3,15 +3,13 @@ import { useQuery } from 'react-query';
 import { AxiosError, AxiosResponse } from 'axios';
 import { getRepoList } from '@apis/repo';
 
-const useRepoList = () => {
-  const userId = 'youthfulhps';
+const useRepoList = (userId: string) => {
   const sortBy = ['created', 'updated', 'pushed', 'full_name'] as const;
   const [selectedSort, setSelectedSort] = useState<typeof sortBy[number]>('full_name');
 
   const { isLoading, isError, data, error } = useQuery<AxiosResponse<any[]>, AxiosError>(
     ['repoList', userId, selectedSort],
     () => getRepoList(userId, selectedSort),
-    { keepPreviousData: true },
   );
 
   const mutateSort = async (sort: typeof sortBy[number]) => {
