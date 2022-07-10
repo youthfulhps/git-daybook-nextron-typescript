@@ -4,7 +4,7 @@ import useUser from '@hooks/user/useUser';
 import userLanguageList from '@hooks/language/useLanguageList';
 import { UserContext } from '@contexts/UserContext';
 
-const UserDetail = lazy(() => import('./UserDetail'));
+const UserCard = lazy(() => import('./UserCard'));
 const Skeleton = lazy(() => import('@components/common/Skeleton'));
 
 function UserSection() {
@@ -16,7 +16,7 @@ function UserSection() {
   return (
     <ErrorBoundary fallback={<div>에러 발생!</div>}>
       <Suspense fallback={<Skeleton height={648} width={300} />}>
-        <UserDetail user={user} languages={totalLanguageList} />
+        <UserCard avatarUrl={user.avatar_url} onClick={() => {}} />
       </Suspense>
     </ErrorBoundary>
   );

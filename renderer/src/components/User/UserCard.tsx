@@ -20,6 +20,7 @@ const StyledUserCard = styled.div<{ avatarUrl: string }>`
   cursor: pointer;
   position: relative;
   opacity: 0.8;
+  transition-duration: 0.5s;
 
   &:hover {
     opacity: 1;
