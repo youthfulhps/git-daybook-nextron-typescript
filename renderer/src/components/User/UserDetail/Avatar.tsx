@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 
 type AvatarProps = {
   avatarUrl: string;
 };
 
-const StyledAvatar = styled(Image)`
+const StyledAvatar = styled.img`
   border-radius: 50%;
 `;
 

@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { Suspense, lazy, useContext } from 'react';
+import ErrorBoundary from '@components/common/ErrorBoundary';
 import useUser from '@hooks/user/useUser';
-import Skeleton from '@components/common/Skeleton';
-import UserCard from './UserCard';
-import UserDetail from './UserDetail';
-import useActiveSection from '@hooks/common/useActiveSection';
 import userLanguageList from '@hooks/language/useLanguageList';
+import { UserContext } from '@contexts/UserContext';
+
+const UserDetail = lazy(() => import('./UserDetail'));
+const Skeleton = lazy(() => import('@components/common/Skeleton'));
 
 function UserSection() {
-  const { data: user } = useUser('youthfulhps');
-  const { languages } = userLanguageList('youthfulhps');
-  const { isSectionActivated, activateSection } = useActiveSection('user');
+  const { userId } = useContext(UserContext);
 
-  if (!user) return <Skeleton height={300} width={300} />;
+  const { user } = useUser(userId);
+  const { totalLanguageList } = userLanguageList(userId);
 
-  if (!isSectionActivated)
-    return <UserCard avatarUrl={user.avatar_url} onClick={activateSection} />;
-
-  return <UserDetail user={user} languages={languages} />;
+  return (
+    <ErrorBoundary fallback={<div>에러 발생!</div>}>
+      <Suspense fallback={<Skeleton height={648} width={300} />}>
+        <UserDetail user={user} languages={totalLanguageList} />
+      </Suspense>
+    </ErrorBoundary>
+  );
 }
 
 export default UserSection;

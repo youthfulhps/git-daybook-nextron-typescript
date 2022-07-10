@@ -1,9 +1,14 @@
-import useRequest from '../../libs';
+import { useQuery } from 'react-query';
+import { getUser } from '@apis/user';
+import { AxiosResponse, AxiosError } from 'axios';
 
 const useUser = (userId: string) => {
-  const { data, error, isValidating, mutate } = useRequest(`/users/${userId}`);
+  const { isLoading, isError, data, error } = useQuery<AxiosResponse<any>, AxiosError>(
+    ['user', userId],
+    () => getUser(userId),
+  );
 
-  return { data, error, isValidating, mutate };
+  return { user: data && data.data, error, isError, isLoading };
 };
 
 export default useUser;

@@ -21,6 +21,28 @@ export default class LanguageUtils {
     return Object.fromEntries(Object.entries(languages).slice(0, 7)) as any;
   }
 
+  static getMergedLanguageList(languages: any[]) {
+    const mergedLanguages = {};
+
+    languages.map((language) => {
+      Object.keys(language).map((key) => {
+        if (mergedLanguages.hasOwnProperty(key)) {
+          mergedLanguages[key] += language[key];
+        } else {
+          mergedLanguages[key] = language[key];
+        }
+      });
+    });
+
+    return mergedLanguages;
+  }
+
+  static getSortedLanguageList(mergedLanguage) {
+    return Object.entries(mergedLanguage)
+      .sort(([, a], [, b]) => Number(b) - Number(a))
+      .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+  }
+
   static getLanguageInfoList(languages: any) {
     const total = this.getLanguageTotal(languages);
     const slicedLanguages = this.getSlicedLanguages(languages);
@@ -34,3 +56,5 @@ export default class LanguageUtils {
     });
   }
 }
+
+//랭귀지 배열 생성까지 구현함, 이어서 랜더링할 수 있도록 각각의 색깔, 퍼센테이지 구할 수 있어야 됨

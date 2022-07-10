@@ -1,33 +1,19 @@
 import { API } from '..';
 import axios from 'axios';
+import { getRepoList } from '../repo';
 
 const getUser = async (userId: string) => {
   return API.get(`/users/${userId}`);
 };
 
-export const getUserLanguages = async (repos: any) => {
-  try {
-    const allLaguages = {};
-    for (let repo of repos) {
-      if (repo.fork || repo.name.includes('github.io')) continue;
-      const languages = await axios.get(repo.languages_url);
-      Object.keys(languages.data).map((key) => {
-        if (allLaguages.hasOwnProperty(key)) {
-          allLaguages[key] += languages.data[key];
-        } else {
-          allLaguages[key] = languages.data[key];
-        }
-      });
-    }
+export const getUserLanguageList = async (userId: string) => {
+  const { data: repoList } = await getRepoList(userId, 'updated');
 
-    const sortedLaguages = Object.entries(allLaguages)
-      .sort(([, a], [, b]) => Number(b) - Number(a))
-      .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+  const requests = repoList
+    .filter((repo) => !(repo.fork || repo.name.includes('github.io')))
+    .map((repo) => API.get(repo.languages_url));
 
-    return sortedLaguages;
-  } catch (e) {
-    return {};
-  }
+  return await Promise.all(requests);
 };
 
 export { getUser };
