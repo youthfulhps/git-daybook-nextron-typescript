@@ -24,8 +24,8 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: 'IBM Plex Sans KR', -apple-system, sans-serif;
         font-size: 14px;
-        background-color: var(--color-200);
-        color: white;
+        background-color: var(--color-900);
+        color: var(--color-800);
         padding-top: 50px;
 
         --color-100: #f1f3f8;
