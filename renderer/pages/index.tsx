@@ -6,6 +6,7 @@ import UserSection from '@components/user';
 import Repo from '@components/Repo';
 import SettingModal from '@components/common/Modal/SettingModal';
 import { UserContext } from '@contexts/UserContext';
+import UserLog from '@components/user/UserLog';
 
 const StyledInnerLayout = styled.div<{ activeSection: string }>`
   display: grid;
@@ -17,13 +18,18 @@ const StyledInnerLayout = styled.div<{ activeSection: string }>`
   ${({ activeSection }) => getTemplateAreaBySection(activeSection)};
 
   section {
-    box-shadow: 20px 20px 60px #b6becc, -20px -20px 60px #f6ffff;
+    box-shadow: 10px 20px 20px hsl(230deg 4% 8% / 30%);
     border-radius: 16px;
   }
 
-  .user {
-    grid-area: user;
+  .user-profile {
+    grid-area: user-profile;
   }
+
+  .user-log {
+    grid-area: user-log;
+  }
+
   .repo {
     grid-area: repo;
   }
@@ -42,8 +48,11 @@ function Home() {
   return (
     <>
       <StyledInnerLayout activeSection={sectionContext.activeSection}>
-        <section className="user">
+        <section className="user-profile">
           <UserSection />
+        </section>
+        <section className="user-log">
+          <UserLog />
         </section>
         <section className="repo">
           <Repo />
