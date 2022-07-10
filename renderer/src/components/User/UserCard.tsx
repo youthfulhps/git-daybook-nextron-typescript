@@ -19,16 +19,34 @@ const StyledUserCard = styled.div<{ avatarUrl: string }>`
   border-radius: 8px;
   cursor: pointer;
   position: relative;
-  opacity: 0.8;
-  transition-duration: 0.5s;
+
+  .user-card__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    filter: grayscale(10%);
+    display: none;
+    transition-duration: 0.5s;
+  }
 
   &:hover {
-    opacity: 1;
+    .user-card__content {
+      display: block;
+    }
   }
 `;
 
 function UserCard({ avatarUrl, onClick }: UserCardProps) {
-  return <StyledUserCard avatarUrl={avatarUrl} onClick={onClick} />;
+  return (
+    <StyledUserCard avatarUrl={avatarUrl} onClick={onClick}>
+      <div className="user-card__content"></div>
+    </StyledUserCard>
+  );
 }
 
 export default UserCard;
