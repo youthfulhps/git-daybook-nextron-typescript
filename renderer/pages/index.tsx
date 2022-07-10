@@ -20,6 +20,8 @@ const StyledInnerLayout = styled.div<{ activeSection: string }>`
   section {
     box-shadow: 10px 20px 20px hsl(230deg 4% 8% / 30%);
     border-radius: 16px;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.5s;
   }
 
   .user-profile {
