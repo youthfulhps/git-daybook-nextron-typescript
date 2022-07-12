@@ -37,6 +37,9 @@ const GlobalStyles = createGlobalStyle`
         --color-700: #393b44;
         --color-800: #24252b;
         --color-900: #17181c;
+        --color-commit-row: #9be9a8;
+        --color-commit-middle: #40c463;
+        --color-commit-high: #216e39;
 
         --size-100: 2px;
         --size-200: 4px;
