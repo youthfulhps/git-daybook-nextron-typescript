@@ -1,21 +1,11 @@
-export const getContributionsQuery = (userId: string, since: string) => `
+export const getContributionsQuery = (userId: string, from: string, to: string) => `
   query {
     user(login: "${userId}") {
-      name
-      contributionsCollection(from: "${since}T00:00:00Z") {
-        contributionCalendar {
-          colors
-          totalContributions
-          weeks {
-            contributionDays {
-              color
-              contributionCount
-              date
-              weekday
-            }
-            firstDay
-          }
-        }
+      contributionsCollection(from: "${from}T00:00:00Z", to: "${to}T00:00:00Z") {
+        totalCommitContributions
+        totalIssueContributions
+        totalPullRequestContributions
+        totalPullRequestReviewContributions
       }
     }
   }
